@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import {
   Carousel,
@@ -120,7 +119,7 @@ const UrnCarousel: React.FC<UrnCarouselProps> = ({ urns, onSelectUrn }) => {
                 <img
                   src={u.images[0]}
                   alt={u.name}
-                  className="w-full h-full object-cover group-hover:scale-[1.017] transition-transform duration-[1700ms] ease-linear"
+                  className="w-full h-full object-cover group-hover:scale-[1.017] transition-transform duration-\[1700ms\] ease-linear"
                   draggable={false}
                   style={{
                     minWidth: "100%",

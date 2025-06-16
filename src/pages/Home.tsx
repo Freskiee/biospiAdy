@@ -1,10 +1,10 @@
-
 import React from "react";
 import Hero from "@/components/Hero";
 import QuienesSomos from "@/components/QuienesSomos";
 import MisionVisionValores from "@/components/MisionVisionValores";
 import SocialLinks from "@/components/SocialLinks";
 import SolicitaInformacion from "@/components/SolicitaInformacion";
+import ImageGallery from '@/components/ImageGallery';
 
 const Home = () => (
   <main className="w-full min-h-screen flex flex-col bg-[#f6fafb]">
@@ -15,6 +15,7 @@ const Home = () => (
     <MisionVisionValores />
     <SocialLinks />
     <SolicitaInformacion />
+    <ImageGallery />
   </main>
 );
 

@@ -54,7 +54,7 @@ const Servicios = () => (
     {/* Hero servicios */}
     <section className="w-full relative min-h-[230px] flex items-center justify-center bg-white overflow-hidden">
       <img
-        src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=900&q=80"
+        src="/assets/imagen-inicio.png"
         alt="Servicios de cremación Biospi"
         className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-40 pointer-events-none"
       />

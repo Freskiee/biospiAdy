@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Container from "@/components/layout/Container";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger, DialogClose } from "@/components/ui/dialog";
@@ -30,7 +29,7 @@ const Socios = () => {
       {/* Cover/Hero Image */}
       <div className="w-full relative h-56 md:h-64 flex items-center justify-center bg-white overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=1100&q=80"
+          src="/assets/Inicio_A.png"
           alt="Colaboración veterinaria"
           className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-60 pointer-events-none"
         />
@@ -46,7 +45,7 @@ const Socios = () => {
         <Container>
           <div className="max-w-2xl mx-auto rounded-xl bg-white/90 shadow-lg p-8 animate-fade-in-up text-center space-y-6">
             <p className="text-lg md:text-xl text-gray-700 font-semibold">
-              En <span className="text-primary font-bold">BIOSPI</span> estamos abiertos a una sinergia de sumar esfuerzos para lograr una efectiva relación comercial bajo una cultura de “GANAR, GANAR”.
+              En <span className="text-primary font-bold">BIOSPI</span> estamos abiertos a una sinergia de sumar esfuerzos para lograr una efectiva relación comercial bajo una cultura de "GANAR, GANAR".
             </p>
             <p className="text-base text-gray-700">
               Buscamos <b>socios comerciales</b> y especialistas en el ramo veterinario que deseen brindar un servicio más completo a sus clientes y sumarse a nuestra misión.
@@ -55,7 +54,7 @@ const Socios = () => {
               <b>Estamos seguros de que juntos, hombro a hombro, podemos hacer un gran equipo y garantizar un trato digno a las mascotas que tanto amor les tienen nuestros clientes.</b>
             </p>
             <blockquote className="font-heading italic text-xl md:text-2xl text-secondary-foreground/90 font-bold">
-              “JUNTOS LOGRAREMOS ALCANZAR EL ÉXITO, CRECER Y SERVIR”
+              "JUNTOS LOGRAREMOS ALCANZAR EL ÉXITO, CRECER Y SERVIR"
             </blockquote>
           </div>
         </Container>

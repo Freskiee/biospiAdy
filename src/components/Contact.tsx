@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Container from "./layout/Container";
 import { Input } from "./ui/input";
@@ -87,7 +86,7 @@ const Contact = () => {
                 </span>
               </div>
               <a
-                href="https://wa.me/525571076771"
+                href="https://wa.me/525571076771?text=Hola%2C%20recientemente%20perd%C3%AD%20a%20mi%20mascota%20y%20me%20siento%20muy%20triste.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20BIOSPI%20puede%20apoyarme%20para%20darle%20una%20despedida%20digna%20y%20amorosa.%20Gracias%20por%20estar%20ah%C3%AD%20en%20estos%20momentos%20tan%20dif%C3%ADciles."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 flex items-center gap-2 text-sm font-semibold border border-primary rounded-full py-2 px-6 hover:bg-primary/10 focus:bg-primary/20 active:bg-primary/20 transition-all"
@@ -103,26 +102,27 @@ const Contact = () => {
             </div>
             <div className="w-full flex-shrink-0 flex-grow-0 mt-2">
               <div
-                className="rounded-b-2xl shadow-none border-t border-[#E8EAEF] overflow-hidden w-full"
+                className="rounded-2xl shadow-lg border-t border-[#E8EAEF] overflow-hidden w-full flex justify-center items-center bg-white mt-4"
                 style={{
                   width: "100%",
                   background: "#fff",
-                  borderRadius: "0 0 1rem 1rem",
+                  borderRadius: "1rem",
                   minHeight: 0,
-                  height: 115,
-                  borderTop: "1.2px solid #E8EAEF",
+                  height: 200,
+                  border: "2px solid #30C7B5",
+                  padding: "10px",
                 }}
               >
                 <iframe
                   title="Franz Schubert 188, Peralvillo"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.2580837922883!2d-99.1378145261382!3d19.449813940470288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8f3237d7067%3A0x68e44b3c69ba8466!2sC.%20Franz%20Schubert%20188%2C%20Peralvillo%2C%20Cuauht%C3%A9moc%2C%2006220%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1718039997803!5m2!1ses-419!2smx"
                   width="100%"
-                  height="115"
+                  height="180"
                   style={{
                     border: 0,
-                    borderRadius: "0 0 1rem 1rem",
+                    borderRadius: "1rem",
                     minHeight: 0,
-                    maxHeight: 120,
+                    maxHeight: 180,
                     width: "100%",
                     display: "block",
                     margin: 0,

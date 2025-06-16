@@ -12,15 +12,20 @@ const NAV_ITEMS = [
 
 const Navbar = () => {
   const location = useLocation();
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={cn(
       "sticky top-0 z-40 w-full bg-white/95 shadow transition-all border-b border-primary/15"
     )}>
       <nav className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="text-2xl font-heading tracking-tight text-primary font-extrabold group-hover:scale-105 transition-transform duration-200">
-            <span role="img" aria-label="paw">🐾</span> Biospi
-          </span>
+        <Link to="/" className="flex items-center gap-2 group" onClick={handleLogoClick}>
+          <img src="/src/assets/BIOSPI-LOGO_baja-1024x1024.webp" alt="Logo" className="h-12 w-auto" />
         </Link>
         <ul className="hidden md:flex gap-7 items-center">
           {NAV_ITEMS.map((item) => (

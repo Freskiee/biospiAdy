@@ -1,4 +1,3 @@
-
 import React from "react";
 import Container from "./layout/Container";
 import { MessageCircle } from "lucide-react";
@@ -13,7 +12,7 @@ const SolicitaInformacion = () => (
           Recuerda que tenemos servicio las 24 horas del día, los 365 días del año.
         </p>
         <a
-          href="https://wa.me/525571076771"
+          href="https://wa.me/525571076771?text=Hola%2C%20recientemente%20perd%C3%AD%20a%20mi%20mascota%20y%20me%20siento%20muy%20triste.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20BIOSPI%20puede%20apoyarme%20para%20darle%20una%20despedida%20digna%20y%20amorosa.%20Gracias%20por%20estar%20ah%C3%AD%20en%20estos%20momentos%20tan%20dif%C3%ADciles."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-7 py-3 rounded-full font-bold text-lg border-2 border-[#30C7B5] bg-[#30C7B5]/10 text-[#30C7B5] hover:bg-[#30C7B5] hover:text-white transition-all shadow pulse"

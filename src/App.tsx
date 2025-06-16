@@ -36,7 +36,9 @@ const App = () => (
           </div>
           <footer className="text-center py-8 bg-white/95 border-t shadow-inner mt-10 w-full">
             <div className="flex flex-col items-center gap-3 px-4">
-              <span className="text-3xl font-heading text-primary font-black">🐾 Biospi</span>
+              <a href="/" onClick={() => window.scrollTo(0, 0)}>
+                <img src="/src/assets/BIOSPI-LOGO_baja-1024x1024.webp" alt="Biospi Logo" className="h-12 w-auto" />
+              </a>
               <span className="text-gray-700 font-medium">info@biospi.com | <a href="tel:+525571076771" className="text-primary font-bold underline">+52 55 7107-6771</a></span>
               <span className="block text-sm text-gray-500 mt-1">Contrata con nosotros</span>
               <div className="flex flex-wrap gap-7 mt-2 justify-center">

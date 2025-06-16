@@ -1,16 +1,15 @@
-
 import React from "react";
 import { Facebook, Instagram } from "lucide-react";
 
 const social = [
   {
-    href: "https://facebook.com/",
+    href: "https://www.facebook.com/Biospii",
     label: "Facebook",
     icon: Facebook,
     color: "#1877F3",
   },
   {
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/biospi_mx/",
     label: "Instagram",
     icon: Instagram,
     color: "#E1306C",

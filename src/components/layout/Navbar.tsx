@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const NAV_ITEMS = [
   { label: "Inicio", to: "/" },
@@ -43,6 +44,16 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          <li>
+            <a href="https://www.facebook.com/Biospii" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-primary transition-colors">
+              <FaFacebook size={24} />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/biospi_mx/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-primary transition-colors">
+              <FaInstagram size={24} />
+            </a>
+          </li>
         </ul>
         {/* Burger menu for mobiles */}
         <div className="flex md:hidden">

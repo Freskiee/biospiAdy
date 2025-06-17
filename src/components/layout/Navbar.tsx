@@ -27,6 +27,9 @@ const Navbar = () => {
       <nav className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group" onClick={handleLogoClick}>
           <img src="/src/assets/BIOSPI-LOGO_baja-1024x1024.webp" alt="Logo" className="h-12 w-auto" />
+          <span className="text-2xl font-sans tracking-tight text-primary font-extrabold group-hover:scale-105 transition-transform duration-200">
+            BIOSPI
+          </span>
         </Link>
         <ul className="hidden md:flex gap-7 items-center">
           {NAV_ITEMS.map((item) => (

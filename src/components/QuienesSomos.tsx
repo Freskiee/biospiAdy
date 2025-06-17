@@ -1,4 +1,3 @@
-
 import React from "react";
 import Container from "./layout/Container";
 import { PawPrint } from "lucide-react";
@@ -8,7 +7,7 @@ const QuienesSomos = () => (
     <Container>
       <div className="max-w-3xl mx-auto text-center p-7 rounded-3xl shadow-xl bg-white/95 border-l-4 border-[#30C7B5]/50 animate-fade-in-up">
         <div className="mb-5 flex justify-center">
-          <PawPrint size={32} className="text-[#30C7B5]" />
+          <img src="/src/assets/BIOSPI-LOGO-1024x956.webp" alt="Biospi Logo" className="h-16 w-auto" />
         </div>
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">¿Quiénes somos?</h2>
         <p className="text-lg text-gray-700 font-medium mb-3">

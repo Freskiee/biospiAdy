@@ -1,4 +1,3 @@
-
 import React from "react";
 import Container from "./layout/Container";
 import { HeartHandshake, Eye, Gem, Leaf, Thermometer, Smile, Link } from "lucide-react";
@@ -28,7 +27,7 @@ const blocks = [
         ¡Diversificación en nuestros servicios! BIOSPI también es un espacio en el cual encontrarás hospedaje para tus compañeritos de vida en nuestro Resort Canino, servicio de estética, spa, venta de accesorios, alimentos, área de entrenamiento canino y muchas cosas más.
         <br />
         <span className="italic text-xs text-gray-500 block mt-2">
-          “En BIOSPI trabajamos en brindar un servicio de excelencia y mejorar cada día”
+          "En BIOSPI trabajamos en brindar un servicio de excelencia y mejorar cada día"
         </span>
       </>
     ),
@@ -41,7 +40,7 @@ const blocks = [
     content: (
       <ul className="grid gap-2 mt-3 mx-auto max-w-xs">
         {valores.map(({ label, icon }) => (
-          <li key={label} className="flex items-center gap-3 bg-[#F3F8FC] rounded-xl px-3 py-2 shadow-sm border-l-4 border-[#30C7B5]/40">
+          <li key={label} className="flex items-center gap-3 bg-[#F3F8FC] rounded-xl px-3 py-2 shadow-sm border-l-4 border-[#30C7B5]/40 valor-bar">
             {icon}
             <span className="font-semibold text-base text-gray-700">{label}</span>
           </li>
@@ -58,27 +57,46 @@ const MisionVisionValores = () => (
         Misión, Visión y Valores
       </h2>
       <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
-        {/* MISIÓN */}
-        <div className="flex-1 rounded-3xl border-2 border-[#30C7B5] bg-white p-7 shadow-lg animate-fade-in-up transition hover:scale-[1.03] duration-300">
-          <div className="flex justify-center mb-3">{blocks[0].icon}</div>
-          <h3 className="text-xl font-bold text-[#30C7B5] mb-2">{blocks[0].title}</h3>
-          <p className="text-gray-700 font-medium">{blocks[0].text}</p>
-        </div>
-        {/* VISIÓN */}
-        <div className="flex-1 rounded-3xl border-2 border-[#B1E5F4] bg-white p-7 shadow-lg animate-fade-in-up transition hover:scale-[1.03] duration-300">
-          <div className="flex justify-center mb-3">{blocks[1].icon}</div>
-          <h3 className="text-xl font-bold text-[#53b8e6] mb-2">{blocks[1].title}</h3>
-          <p className="text-gray-700 font-medium">{blocks[1].text}</p>
-        </div>
-        {/* VALORES */}
-        <div className="flex-1 rounded-3xl border-2 border-[#CDF0EA] bg-white p-7 shadow-lg animate-fade-in-up transition hover:scale-[1.03] duration-300">
-          <div className="flex justify-center mb-3">{blocks[2].icon}</div>
-          <h3 className="text-xl font-bold text-[#30C7B5] mb-2">{blocks[2].title}</h3>
-          {blocks[2].content}
-        </div>
+        {blocks.map((block, index) => (
+          <div
+            key={index}
+            className="flex-1 bg-white p-7 shadow-lg animate-fade-in-up transition-transform transform hover:scale-105 duration-300 hover:shadow-2xl rounded-3xl"
+            style={{ minHeight: '300px', borderColor: block.color }}
+          >
+            <div className="flex justify-center mb-3">{block.icon}</div>
+            <h3 className="text-xl font-bold mb-2" style={{ color: block.color }}>{block.title}</h3>
+            {block.text ? (
+              <p className="text-gray-700 font-medium">{block.text}</p>
+            ) : (
+              <div className="text-gray-700 font-medium">{block.content}</div>
+            )}
+          </div>
+        ))}
       </div>
     </Container>
   </section>
 );
 
 export default MisionVisionValores;
+
+<style jsx>{`
+  .valor-bar {
+    position: relative;
+    overflow: hidden;
+    background-color: #f3f8fc;
+    border-radius: 0.5rem;
+  }
+  .valor-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #30c7b5;
+    transition: width 2s ease-in-out;
+  }
+  .valor-bar:hover::after {
+    width: 100%;
+  }
+`}</style>

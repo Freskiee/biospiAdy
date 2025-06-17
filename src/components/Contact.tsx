@@ -86,7 +86,7 @@ const Contact = () => {
                 </span>
               </div>
               <a
-                href="https://wa.me/525571076771?text=Hola%2C%20recientemente%20perd%C3%AD%20a%20mi%20mascota%20y%20me%20siento%20muy%20triste.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20BIOSPI%20puede%20apoyarme%20para%20darle%20una%20despedida%20digna%20y%20amorosa.%20Gracias%20por%20estar%20ah%C3%AD%20en%20estos%20momentos%20tan%20dif%C3%ADciles."
+                href="https://wa.me/525571076771?text=Hola%2C%20estoy%20interesado%20en%20contratar%20uno%20de%20los%20servicios%20de%20BIOSPI%20y%20me%20gustar%C3%ADa%20saber%20cu%C3%A1l%20es%20el%20siguiente%20paso.%20%C2%BFPodr%C3%ADan%20orientarme%20sobre%20el%20proceso%2C%20por%20favor%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 flex items-center gap-2 text-sm font-semibold border border-primary rounded-full py-2 px-6 hover:bg-primary/10 focus:bg-primary/20 active:bg-primary/20 transition-all"
@@ -97,7 +97,7 @@ const Contact = () => {
                   <path fill="#fff" d="M17.472 14.382c-.297-.149-1.757-.867-2.03-.967-.273-.1-.472-.149-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.205-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.522.074-.795.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.198 2.095 3.201 5.077 4.358.709.306 1.263.488 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.757-.719 2.005-1.413.248-.695.248-1.291.173-1.413-.075-.123-.272-.198-.57-.347z"/>
                   <path fill="#30C7B5" d="M20.52 3.484A11.883 11.883 0 0 0 12.062.001c-3.202 0-6.215 1.25-8.483 3.518C1.255 5.788.006 8.8.006 12c0 2.093.548 4.13 1.594 5.936L.094 23.21a1.077 1.077 0 0 0 1.322 1.321l5.28-1.505A11.885 11.885 0 0 0 12.061 24c3.2 0 6.212-1.25 8.48-3.516a11.892 11.892 0 0 0 3.518-8.484c0-3.2-1.25-6.213-3.518-8.484zm-8.46 18.658c-1.761 0-3.487-.469-4.969-1.354l-.355-.209-3.134.893.894-3.057-.229-.376c-1.053-1.727-1.611-3.726-1.611-5.742 0-5.74 4.676-10.418 10.412-10.418 2.785 0 5.4 1.086 7.372 3.06a10.384 10.384 0 0 1 3.045 7.36c-.002 5.742-4.678 10.419-10.424 10.419z"/>
                 </svg>
-                <span className="text-primary font-bold">WhatsApp</span>
+                <span className="text-primary font-bold">WHATSAPP</span>
               </a>
             </div>
             <div className="w-full flex-shrink-0 flex-grow-0 mt-2">

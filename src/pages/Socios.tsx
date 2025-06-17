@@ -29,14 +29,16 @@ const Socios = () => {
       {/* Cover/Hero Image */}
       <div className="w-full relative h-56 md:h-64 flex items-center justify-center bg-white overflow-hidden">
         <img
-          src="/assets/Inicio_A.png"
+          src="/src/assets/redesBiospi.webp"
           alt="Colaboración veterinaria"
-          className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-60 pointer-events-none"
+          className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-80 pointer-events-none rounded-lg"
         />
         <Container className="relative z-10 py-10 flex flex-col items-center animate-fade-in">
-          <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2 text-center drop-shadow">
-            SOCIOS COMERCIALES Y VETERINARIOS
-          </h1>
+          <div className="inline-block bg-black/30 rounded">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-secondary mb-2 text-center drop-shadow-lg px-4 py-2">
+              SOCIOS COMERCIALES Y VETERINARIOS
+            </h1>
+          </div>
         </Container>
       </div>
 

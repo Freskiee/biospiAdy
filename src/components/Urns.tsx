@@ -15,17 +15,24 @@ import {
   CarouselPrevious,
   CarouselApi,
 } from "./ui/carousel";
-import { Circle, Image as ImageIcon, RotateCcw } from "lucide-react";
+import { Circle, Image as ImageIcon, RotateCcw, MessageCircle } from "lucide-react";
 import UrnCarousel from "./UrnCarousel";
+import urnaBiospi from '../assets/urna_biospi.webp';
+import urnaAmor from '../assets/urna_amor.webp';
+import urnaEsfera from '../assets/urna_esfera.webp';
+import urnaEsponjoso from '../assets/urna_esponjoso.webp';
+import urnaCarmen from '../assets/urna_carmen.webp';
+import urnaWood from '../assets/urna_wood.webp';
+import urnaNaturaleza from '../assets/urna_naturaleza.webp';
 
 // Estructura de imágenes (puedes cambiar las urls para mejor visual o más variedad)
 const URNS = [
   {
     name: "Urna Biospi",
     images: [
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
+      urnaBiospi,
+      urnaBiospi,
+      urnaBiospi,
     ],
     desc:
       "Diseño elegante exclusivo de BIOSPI. Acabados de alta calidad, para un recuerdo eterno.",
@@ -34,9 +41,9 @@ const URNS = [
   {
     name: "Urna Amor Tattoo",
     images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      urnaAmor,
+      urnaAmor,
+      urnaAmor,
     ],
     desc:
       "Moderna, con detalles inspirados en el amor incondicional hacia tu mascota.",
@@ -45,9 +52,9 @@ const URNS = [
   {
     name: "Urna Esfera",
     images: [
-      "https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=800&q=80",
+      urnaEsfera,
+      urnaEsfera,
+      urnaEsfera,
     ],
     desc:
       "Forma esférica y armónica. Un homenaje minimalista y contemporáneo.",
@@ -56,9 +63,9 @@ const URNS = [
   {
     name: "Urna Esponjoso",
     images: [
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+      urnaEsponjoso,
+      urnaEsponjoso,
+      urnaEsponjoso,
     ],
     desc:
       "Pensada para recordar la calidez y la ternura de quienes dejan una huella suave en la vida.",
@@ -67,9 +74,9 @@ const URNS = [
   {
     name: "Urna Carmen",
     images: [
-      "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=800&q=80",
+      urnaCarmen,
+      urnaCarmen,
+      urnaCarmen,
     ],
     desc:
       "Urna personalizada con nombre y fecha, ideal para homenajes únicos y sentidos.",
@@ -78,9 +85,9 @@ const URNS = [
   {
     name: "Urna Wood",
     images: [
-      "https://images.unsplash.com/photo-1519121780667-14a173b1ae9b?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1519121780667-14a173b1ae9b?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1519121780667-14a173b1ae9b?auto=format&fit=crop&w=800&q=80",
+      urnaWood,
+      urnaWood,
+      urnaWood,
     ],
     desc:
       "Confeccionada en madera seleccionada, integra naturaleza y elegancia en un mismo diseño.",
@@ -89,9 +96,9 @@ const URNS = [
   {
     name: "Urna Naturaleza",
     images: [
-      "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=400&q=80",
-      "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=700&q=80",
-      "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=800&q=80",
+      urnaNaturaleza,
+      urnaNaturaleza,
+      urnaNaturaleza,
     ],
     desc:
       "Materiales ecológicos y biodegradables para una despedida amigable con el entorno.",
@@ -112,12 +119,32 @@ const Urns = () => {
     typeof window !== "undefined" &&
     window.matchMedia("(pointer: coarse)").matches;
 
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+
+  const handleArrow = (direction: "prev" | "next") => {
+    if (!carouselApi) return;
+    if (direction === "next") {
+      carouselApi.scrollNext();
+    } else {
+      carouselApi.scrollPrev();
+    }
+  };
+
+  const handle360Arrow = (direction: "prev" | "next", api: CarouselApi | null) => {
+    if (!api) return;
+    if (direction === "next") {
+      api.scrollNext();
+    } else {
+      api.scrollPrev();
+    }
+  };
+
   return (
     <main className="bg-secondary/10 min-h-screen flex flex-col">
       {/* Carrusel TOP modularizado */}
       <section className="w-full relative bg-white shadow-sm overflow-x-hidden py-8">
         <Container>
-          <UrnCarousel urns={URNS} onSelectUrn={setOpenIndex} />
+          <UrnCarousel urns={URNS} onSelectUrn={setOpenIndex} setApi={setCarouselApi} />
         </Container>
       </section>
       {/* Intro */}
@@ -194,7 +221,8 @@ const Urns = () => {
       </section>
       {/* Modal visual urna */}
       <Dialog open={openIndex !== null} onOpenChange={() => setOpenIndex(null)}>
-        <DialogContent className="rounded-2xl md:max-w-2xl lg:max-w-3xl p-0 bg-white/95 overflow-hidden animate-fade-in scale-100">
+        <DialogContent className="rounded-2xl md:max-w-2xl lg:max-w-3xl p-0 bg-white/95 overflow-hidden animate-fade-in scale-100" aria-describedby="urn-description">
+          <p id="urn-description" className="sr-only">Detalles de la urna seleccionada, incluyendo nombre, descripción y precio.</p>
           {openIndex !== null && (
             <div className="flex flex-col md:flex-row md:items-stretch">
               {/* Imagen central tipo 360 */}
@@ -213,7 +241,7 @@ const Urns = () => {
                 {/* Carrusel secundario debajo si hay más imágenes */}
                 {URNS[openIndex].images.length > 1 && (
                   <div className="w-full mt-6">
-                    <Carousel opts={{ loop: true }}>
+                    <Carousel opts={{ loop: true }} setApi={setCarouselApi}>
                       <CarouselContent>
                         {URNS[openIndex].images.map((img, j) => (
                           <CarouselItem key={img + j} className="flex items-center justify-center">
@@ -225,8 +253,28 @@ const Urns = () => {
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
+                      <button
+                        type="button"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full shadow border border-gray-200 hover:bg-primary/20 transition"
+                        style={{ width: 38, height: 38 }}
+                        aria-label="Anterior"
+                        onClick={() => handle360Arrow("prev", carouselApi)}
+                      >
+                        <svg width={18} height={18} viewBox="0 0 24 24" fill="none">
+                          <path d="M15 18l-6-6 6-6" stroke="#179E9A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+                      <button
+                        type="button"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full shadow border border-gray-200 hover:bg-primary/20 transition"
+                        style={{ width: 38, height: 38 }}
+                        aria-label="Siguiente"
+                        onClick={() => handle360Arrow("next", carouselApi)}
+                      >
+                        <svg width={18} height={18} viewBox="0 0 24 24" fill="none">
+                          <path d="M9 6l6 6-6 6" stroke="#179E9A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
                     </Carousel>
                   </div>
                 )}
@@ -239,22 +287,15 @@ const Urns = () => {
                   </DialogTitle>
                 </DialogHeader>
                 <p className="text-base text-gray-800 mb-3">{URNS[openIndex].desc}</p>
-                <div className="mb-4 mt-3">
-                  <span className="text-lg font-bold text-primary">
-                    {`$${URNS[openIndex].price.toLocaleString("es-AR")}`}
-                  </span>
-                </div>
                 <div className="flex gap-3 flex-wrap">
                   <a
-                    href="https://wa.me/525571076771?text=Hola%2C%20recientemente%20perd%C3%AD%20a%20mi%20mascota%20y%20me%20siento%20muy%20triste.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20BIOSPI%20puede%20apoyarme%20para%20darle%20una%20despedida%20digna%20y%20amorosa.%20Gracias%20por%20estar%20ah%C3%AD%20en%20estos%20momentos%20tan%20dif%C3%ADciles."
+                    href={`https://wa.me/525571076771?text=Hola%2C%20estoy%20interesado%20en%20la%20urna%20%E2%80%9C${encodeURIComponent(URNS[openIndex].name)}%E2%80%9D%20que%20vi%20en%20su%20p%C3%A1gina.%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20caracter%C3%ADsticas%2C%20disponibilidad%20y%20precio.%20Agradezco%20mucho%20su%20atenci%C3%B3n.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-white font-bold shadow hover:bg-[#1ec0ae] transition-all text-lg"
                   >
-                    <svg width={22} height={22} fill="none" viewBox="0 0 256 256">
-                      <path fill="#fff" d="M128 20a108 108 0 1 0 0 216c1.6 0 3.2 0 4.8-.1H128a107.71 107.71 0 0 0 52.4-14.4l35.3 9.2a16 16 0 0 0 19.1-19.1l-9.2-35.3A108 108 0 0 0 128 20ZM42.2 196.6l6.2-23.7a28 28 0 0 1 13.8-17.7L64.7 175A92 92 0 1 1 175 64.7l-19.3 2.5a28 28 0 0 1-17.7 13.8l-23.7 6.2A92.43 92.43 0 0 1 42.2 196.6Zm176.3-18.7c-13 13-28.3 22.9-45.2 28.6l9.3-35.7a44 44 0 0 1 1.6-11.7l36.8 10.5c1.8.5 3.6 1.6 4.9 2.9a8.06 8.06 0 0 1 2.9 4.9Z"/>
-                    </svg>
-                    WhatsApp: Solicitar información
+                    <MessageCircle size={22} className="text-white" />
+                    Más información
                   </a>
                   <DialogClose asChild>
                     <button className="px-5 py-2 rounded-full border border-primary bg-primary/10 text-primary font-bold hover:bg-secondary transition">
@@ -268,22 +309,20 @@ const Urns = () => {
         </DialogContent>
       </Dialog>
       {/* Sección Solicita información */}
-      <section className="bg-primary/95 py-10">
+      <section className="bg-primary/95 py-10 rounded-lg">
         <Container>
-          <div className="flex flex-col items-center gap-5 animate-fade-in-up">
+          <div className="flex flex-col items-center gap-5 animate-fade-in-up rounded-lg">
             <h3 className="text-2xl font-heading font-bold text-white mb-2 text-center">
               Solicita información sobre urnas BIOSPI
             </h3>
             <a
-              href="https://wa.me/525571076771?text=Hola%2C%20recientemente%20perd%C3%AD%20a%20mi%20mascota%20y%20me%20siento%20muy%20triste.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20BIOSPI%20puede%20apoyarme%20para%20darle%20una%20despedida%20digna%20y%20amorosa.%20Gracias%20por%20estar%20ah%C3%AD%20en%20estos%20momentos%20tan%20dif%C3%ADciles."
+              href="https://wa.me/525571076771?text=Hola%2C%20estoy%20viendo%20las%20urnas%20que%20ofrecen%20en%20BIOSPI%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20modelos%20disponibles%2C%20precios%20y%20c%C3%B3mo%20puedo%20adquirir%20una.%20Agradezco%20mucho%20su%20atenci%C3%B3n."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-primary font-bold shadow-lg hover:bg-secondary/40 text-lg transition-all hover:scale-105"
             >
-              <svg width={25} height={25} fill="none" viewBox="0 0 256 256">
-                <path fill="#30C7B5" d="M128 20a108 108 0 1 0 0 216c1.6 0 3.2 0 4.8-.1H128a107.71 107.71 0 0 0 52.4-14.4l35.3 9.2a16 16 0 0 0 19.1-19.1l-9.2-35.3A108 108 0 0 0 128 20ZM42.2 196.6l6.2-23.7a28 28 0 0 1 13.8-17.7L64.7 175A92 92 0 1 1 175 64.7l-19.3 2.5a28 28 0 0 1-17.7 13.8l-23.7 6.2A92.43 92.43 0 0 1 42.2 196.6Zm176.3-18.7c-13 13-28.3 22.9-45.2 28.6l9.3-35.7a44 44 0 0 1 1.6-11.7l36.8 10.5c1.8.5 3.6 1.6 4.9 2.9a8.06 8.06 0 0 1 2.9 4.9Z"/>
-              </svg>
-              WhatsApp: Solicitar información
+              <MessageCircle size={22} className="text-primary" />
+              WHATSAPP
             </a>
           </div>
         </Container>

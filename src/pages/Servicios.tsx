@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle, Truck, PawPrint, Tag, Store, Medal, Landmark, Smile } from "lucide-react";
+import { CheckCircle, Truck, PawPrint, Tag, Store, Medal, Landmark, Smile, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/Container";
 
@@ -41,28 +41,29 @@ const serviciosAdicionales = [
 ];
 
 const extras = [
-  { icon: <PawPrint className="w-5 h-5 text-secondary" />, text: "Hospedaje para mascotas (resort canino)" },
-  { icon: <Smile className="w-5 h-5 text-secondary" />, text: "Estética y spa" },
-  { icon: <Store className="w-5 h-5 text-secondary" />, text: "Venta de accesorios" },
-  { icon: <Landmark className="w-5 h-5 text-secondary" />, text: "Venta de alimentos" },
-  { icon: <Medal className="w-5 h-5 text-secondary" />, text: "Entrenamiento canino" },
-  { icon: <CheckCircle className="w-5 h-5 text-secondary" />, text: "Otros servicios relacionados" }
+  { icon: <PawPrint className="w-5 h-5 text-primary" />, text: "Hospedaje para mascotas (resort canino)" },
+  { icon: <Smile className="w-5 h-5 text-primary" />, text: "Estética y spa" },
+  { icon: <Store className="w-5 h-5 text-primary" />, text: "Venta de accesorios" },
+  { icon: <Landmark className="w-5 h-5 text-primary" />, text: "Venta de alimentos" },
+  { icon: <Medal className="w-5 h-5 text-primary" />, text: "Entrenamiento canino" },
+  { icon: <CheckCircle className="w-5 h-5 text-primary" />, text: "Otros servicios relacionados" }
 ];
 
 const Servicios = () => (
   <main className="w-full font-sans bg-secondary/10">
     {/* Hero servicios */}
-    <section className="w-full relative min-h-[230px] flex items-center justify-center bg-white overflow-hidden">
+    <section className="w-full relative min-h-[300px] flex items-center justify-center bg-white overflow-hidden rounded-lg">
       <img
-        src="/assets/imagen-inicio.png"
+        src="/src/assets/home-hero-free.webp"
         alt="Servicios de cremación Biospi"
-        className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-40 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-full object-cover object-center pointer-events-none rounded-lg"
+        style={{ imageRendering: 'auto' }}
       />
-      <Container className="relative z-10 py-10 flex flex-col items-center">
-        <h1 className="text-3xl md:text-4xl font-heading font-bold mb-2 text-primary text-center drop-shadow">
+      <Container className="relative z-10 py-10 flex flex-col items-start pl-32">
+        <h1 className="text-5xl md:text-6xl font-heading font-bold mb-2 text-primary drop-shadow-lg">
           Servicio de cremación para mascotas
         </h1>
-        <p className="text-lg font-medium text-gray-700/90 text-center max-w-xl mx-auto">
+        <p className="text-xl font-medium text-white/90 max-w-xl">
           Tranquilidad y acompañamiento en cada etapa. Cuidamos cada detalle para que el último adiós sea digno y lleno de amor.
         </p>
       </Container>
@@ -95,7 +96,9 @@ const Servicios = () => (
 
         {/* Extras */}
         <div className="bg-secondary/40 rounded-xl p-6 shadow mb-8 animate-fade-in-up">
-          <h3 className="font-heading mb-2 text-primary font-bold text-lg">Para tu tranquilidad… BIOSPI también es:</h3>
+          <h3 className="font-heading mb-2 text-gray-800 font-bold text-2xl">
+            Para tu tranquilidad… BIOSPI también es:
+          </h3>
           <ul className="space-y-1 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
             {extras.map(({icon, text}, i) => (
               <li key={text} className="flex gap-2 items-center text-gray-700 text-base">
@@ -108,15 +111,13 @@ const Servicios = () => (
         {/* Botón WhatsApp */}
         <div className="flex justify-center mt-8">
           <a
-            href="https://wa.me/525571076771?text=Hola%2C%20recientemente%20perd%C3%AD%20a%20mi%20mascota%20y%20me%20siento%20muy%20triste.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20BIOSPI%20puede%20apoyarme%20para%20darle%20una%20despedida%20digna%20y%20amorosa.%20Gracias%20por%20estar%20ah%C3%AD%20en%20estos%20momentos%20tan%20dif%C3%ADciles."
+            href="https://wa.me/525571076771?text=Hola%2C%20estoy%20viendo%20la%20secci%C3%B3n%20de%20servicios%20en%20su%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20lo%20que%20ofrecen%20en%20BIOSPI.%20Quiero%20entender%20mejor%20c%C3%B3mo%20funcionan%20y%20c%C3%B3mo%20puedo%20contratarlos.%20Muchas%20gracias."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-bold shadow-lg hover:bg-primary/90 text-xl transition-all animate-fade-in-up"
           >
-            <svg width={27} height={27} fill="none" viewBox="0 0 256 256">
-              <path fill="white" d="M128 20a108 108 0 1 0 0 216c1.6 0 3.2 0 4.8-.1H128a107.71 107.71 0 0 0 52.4-14.4l35.3 9.2a16 16 0 0 0 19.1-19.1l-9.2-35.3A108 108 0 0 0 128 20ZM42.2 196.6l6.2-23.7a28 28 0 0 1 13.8-17.7L64.7 175A92 92 0 1 1 175 64.7l-19.3 2.5a28 28 0 0 1-17.7 13.8l-23.7 6.2A92.43 92.43 0 0 1 42.2 196.6Zm176.3-18.7c-13 13-28.3 22.9-45.2 28.6l9.3-35.7a44 44 0 0 1 1.6-11.7l36.8 10.5c1.8.5 3.6 1.6 4.9 2.9a8.06 8.06 0 0 1 2.9 4.9Z"/>
-            </svg>
-            Solicita más información por WhatsApp
+            <MessageCircle size={25} className="text-white" />
+            Solicitar detalles de los servicios
           </a>
         </div>
       </Container>
@@ -124,4 +125,4 @@ const Servicios = () => (
   </main>
 );
 
-export default Servicios;
+export default Servicios

@@ -14,12 +14,13 @@ type Urn = {
 interface UrnCarouselProps {
   urns: Urn[];
   onSelectUrn: (idx: number) => void;
+  setApi: (api: CarouselApi) => void;
 }
 
 const AUTO_SCROLL_INTERVAL = 2700; // ms de espera para siguiente slide
 const DELAY_AFTER_INTERACTION = 2800; // ms tras interacción antes de retomar autoplay
 
-const UrnCarousel: React.FC<UrnCarouselProps> = ({ urns, onSelectUrn }) => {
+const UrnCarousel: React.FC<UrnCarouselProps> = ({ urns, onSelectUrn, setApi }) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
   const delayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -96,6 +97,12 @@ const UrnCarousel: React.FC<UrnCarouselProps> = ({ urns, onSelectUrn }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (carouselApi) {
+      setApi(carouselApi);
+    }
+  }, [carouselApi, setApi]);
+
   return (
     <div className="relative">
       <Carousel opts={{ loop: true, align: "start" }} setApi={setCarouselApi}>
@@ -148,7 +155,7 @@ const UrnCarousel: React.FC<UrnCarouselProps> = ({ urns, onSelectUrn }) => {
         </button>
         <button
           type="button"
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full shadow border border-gray-200 hover:bg-primary/20 transition"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full shadow border border-gray-200 hover:bg-primary/20 transition"
           style={{ width: 38, height: 38 }}
           aria-label="Siguiente"
           onClick={() => handleArrow("next")}

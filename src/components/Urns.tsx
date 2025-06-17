@@ -17,13 +17,13 @@ import {
 } from "./ui/carousel";
 import { Circle, Image as ImageIcon, RotateCcw, MessageCircle } from "lucide-react";
 import UrnCarousel from "./UrnCarousel";
-import urnaBiospi from '../assets/urna_biospi.webp';
-import urnaAmor from '../assets/urna_amor.webp';
-import urnaEsfera from '../assets/urna_esfera.webp';
-import urnaEsponjoso from '../assets/urna_esponjoso.webp';
-import urnaCarmen from '../assets/urna_carmen.webp';
-import urnaWood from '../assets/urna_wood.webp';
-import urnaNaturaleza from '../assets/urna_naturaleza.webp';
+import urnaBiospi from '/urna_biospi.webp';
+import urnaAmor from '/urna_amor.webp';
+import urnaEsfera from '/urna_esfera.webp';
+import urnaEsponjoso from '/urna_esponjoso.webp';
+import urnaCarmen from '/urna_carmen.webp';
+import urnaWood from '/urna_wood.webp';
+import urnaNaturaleza from '/urna_naturaleza.webp';
 
 // Estructura de imágenes (puedes cambiar las urls para mejor visual o más variedad)
 const URNS = [

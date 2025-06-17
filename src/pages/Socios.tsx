@@ -29,7 +29,7 @@ const Socios = () => {
       {/* Cover/Hero Image */}
       <div className="w-full relative h-56 md:h-64 flex items-center justify-center bg-white overflow-hidden">
         <img
-          src="/src/assets/redesBiospi.webp"
+          src="/redesBiospi.webp"
           alt="Colaboración veterinaria"
           className="absolute top-0 left-0 w-full h-full object-cover object-center opacity-80 pointer-events-none rounded-lg"
         />

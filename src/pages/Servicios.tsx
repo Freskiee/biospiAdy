@@ -54,7 +54,7 @@ const Servicios = () => (
     {/* Hero servicios */}
     <section className="w-full relative min-h-[300px] flex items-center justify-center bg-white overflow-hidden rounded-lg">
       <img
-        src="/src/assets/home-hero-free.webp"
+        src="/home-hero-free.webp"
         alt="Servicios de cremación Biospi"
         className="absolute top-0 left-0 w-full h-full object-cover object-center pointer-events-none rounded-lg"
         style={{ imageRendering: 'auto' }}
